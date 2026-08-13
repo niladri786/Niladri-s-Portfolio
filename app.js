@@ -198,6 +198,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile & Tablet Orientation Notice Dismiss Handler
+  const orientationNotice = document.getElementById('orientation-notice');
+  const orientationCloseBtn = document.getElementById('orientation-close-btn');
+
+  if (orientationNotice && orientationCloseBtn) {
+    orientationCloseBtn.addEventListener('click', () => {
+      orientationNotice.style.display = 'none';
+    });
+  }
+
   // Event Listeners
   window.addEventListener('scroll', () => {
     updateScrollTarget();

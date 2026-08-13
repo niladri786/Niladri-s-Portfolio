@@ -484,6 +484,125 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
+/* Animated Mobile & Tablet Orientation Notice Banner */
+.orientation-notice {
+  display: none;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 24px auto;
+  position: relative;
+  z-index: 100;
+  animation: noticeSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 992px) {
+  .orientation-notice {
+    display: block;
+  }
+}
+
+/* Hide notice automatically when device is rotated to landscape! */
+@media (orientation: landscape) {
+  .orientation-notice {
+    display: none !important;
+  }
+}
+
+.orientation-notice-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  background: rgba(14, 14, 22, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(147, 51, 234, 0.35), 0 0 15px rgba(192, 132, 252, 0.2);
+  animation: noticeGlowPulse 3s ease-in-out infinite;
+}
+
+.orientation-icon-wrapper {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(147, 51, 234, 0.25);
+  border-radius: 50%;
+  color: var(--purple-accent);
+}
+
+.orientation-phone-icon {
+  font-size: 1.05rem;
+  animation: rotatePhone 2.6s ease-in-out infinite;
+}
+
+.orientation-arrow-icon {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  font-size: 0.65rem;
+  color: #22c55e;
+  animation: spinSlow 3s linear infinite;
+}
+
+@keyframes rotatePhone {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(90deg); }
+  50% { transform: rotate(90deg); }
+  75% { transform: rotate(0deg); }
+}
+
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes noticeGlowPulse {
+  0%, 100% {
+    box-shadow: 0 8px 30px rgba(147, 51, 234, 0.35), 0 0 15px rgba(192, 132, 252, 0.2);
+    border-color: rgba(192, 132, 252, 0.4);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(192, 132, 252, 0.65), 0 0 25px rgba(147, 51, 234, 0.5);
+    border-color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+.orientation-notice-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  line-height: 1.35;
+  letter-spacing: 0.3px;
+  flex: 1;
+  text-align: left;
+}
+
+.orientation-notice-text strong {
+  color: var(--purple-accent);
+  letter-spacing: 0.8px;
+}
+
+.orientation-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.orientation-close-btn:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
 /* Hero Section */
 .hero-section {
   padding: 40px 0 10px 0;
