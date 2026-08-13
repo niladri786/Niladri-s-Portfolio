@@ -208,15 +208,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Smart Footer Mail Redirect Handler (PC -> Web Gmail Compose / Mobile -> Native Gmail App)
+  // Smart Footer Mail Redirect Handler (PC/Laptop/Mac -> Exact Compose URL / Mobile/Tablet -> Native App)
   const footerMailCards = document.querySelectorAll('.footer-mail-card');
   footerMailCards.forEach(link => {
     link.addEventListener('click', (e) => {
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      e.preventDefault();
+      
+      const isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                               window.matchMedia('(hover: none) and (pointer: coarse)').matches ||
+                               window.innerWidth <= 992;
 
-      if (!isMobileDevice) {
-        e.preventDefault();
-        window.open('https://mail.google.com/mail/?view=cm&fs=1&to=niladribusiness08@gmail.com', '_blank');
+      if (isMobileOrTablet) {
+        window.location.href = 'mailto:niladribusiness08@gmail.com';
+      } else {
+        window.open('https://mail.google.com/mail/u/0/#inbox?compose=jrjtXDzgmMLFLtBxCqCTJBCNWDqBrrSpmFRfHnZdXcKrMWVrGCjFXDdtNfShBTwqtWKSgTtC', '_blank');
       }
     });
   });
