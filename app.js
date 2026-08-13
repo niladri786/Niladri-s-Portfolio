@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loaderStatus) loaderStatus.textContent = 'Welcome!';
     setTimeout(() => {
       if (loader) loader.classList.add('hidden');
+      document.body.classList.add('loaded');
     }, 400);
 
     resizeCanvas();

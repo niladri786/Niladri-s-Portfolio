@@ -54,8 +54,16 @@ html {
   right: 12px;
   height: 100vh;
   width: 70px;
-  z-index: 99990;
+  z-index: 900;
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+body.loaded .custom-scroll-widget {
+  opacity: 1;
+  visibility: visible;
 }
 
 .custom-scroll-rope {
