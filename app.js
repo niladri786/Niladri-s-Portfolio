@@ -208,11 +208,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Footer Mail Redirect Handler
+  // Smart Footer Mail Redirect Handler (PC -> Web Gmail Compose / Mobile -> Native Gmail App)
   const footerMailCards = document.querySelectorAll('.footer-mail-card');
   footerMailCards.forEach(link => {
     link.addEventListener('click', (e) => {
-      window.location.href = 'mailto:niladribusiness08@gmail.com';
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+      if (!isMobileDevice) {
+        e.preventDefault();
+        window.open('https://mail.google.com/mail/?view=cm&fs=1&to=niladribusiness08@gmail.com', '_blank');
+      }
     });
   });
 
