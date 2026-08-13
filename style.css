@@ -501,6 +501,25 @@ html {
   padding-top: 20px;
 }
 
+.hero-right-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 420px;
+  width: 100%;
+  position: relative;
+  padding-top: 20px;
+}
+
+.hero-ref-right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 2;
+}
+
 .hero-ref-left {
   display: flex;
   flex-direction: column;
@@ -510,7 +529,7 @@ html {
 }
 
 .hero-ref-center {
-  min-width: 200px;
+  min-width: 150px;
   pointer-events: none;
 }
 
@@ -545,15 +564,23 @@ html {
 
 .hero-ref-title {
   font-family: 'Bebas Neue', 'Space Grotesk', sans-serif;
-  font-size: 8.5rem;
+  font-size: 7.5rem;
   font-weight: 400;
   line-height: 0.85;
   letter-spacing: 4px;
   color: #ffffff;
-  margin: 0 0 16px 0;
+  margin: 0 0 8px 0;
   text-transform: uppercase;
   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
   text-align: left !important;
+}
+
+.hero-title-sukul {
+  margin-bottom: 16px;
+}
+
+.hero-ref-right-content .hero-ref-pill {
+  margin-bottom: 24px;
 }
 
 /* Professional High-End Headline Animation */
@@ -565,6 +592,7 @@ html {
   transition: transform 0.4s ease, text-shadow 0.4s ease;
 }
 
+.hero-title-sukul,
 .hero-ref-right .hero-title-pro {
   animation-delay: 0.35s;
 }
@@ -631,83 +659,77 @@ html {
 }
 
 @media (max-width: 992px) {
-  .hero-ref-container {
-    grid-template-columns: 1.15fr 0.35fr 1.15fr;
-    gap: 10px;
+  .hero-right-layout {
+    grid-template-columns: 0.5fr 1.5fr;
+    gap: 12px;
     padding-top: 15px;
   }
-  .hero-ref-left,
-  .hero-ref-right {
+  .hero-ref-right-content {
     align-items: flex-start;
     text-align: left;
   }
   .hero-ref-title {
-    font-size: clamp(2.4rem, 8vw, 5.8rem);
+    font-size: clamp(2.4rem, 9vw, 5.8rem);
     text-align: left !important;
   }
-  .hero-ref-badge-spacer {
-    height: 26px;
-  }
   .hero-ref-badge {
-    padding: 4px 12px;
-    font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+    padding: 5px 14px;
+    font-size: clamp(0.65rem, 2vw, 0.78rem);
   }
   .hero-ref-pill {
-    padding: 6px 12px;
-    font-size: clamp(0.55rem, 1.7vw, 0.75rem);
+    padding: 8px 14px;
+    font-size: clamp(0.6rem, 1.8vw, 0.78rem);
   }
   .hero-ref-actions {
     flex-direction: column;
     gap: 8px;
     width: 100%;
+    max-width: 300px;
   }
   .hero-ref-actions .btn {
-    padding: 8px 12px;
-    font-size: clamp(0.65rem, 2vw, 0.82rem);
+    padding: 10px 16px;
+    font-size: clamp(0.75rem, 2.2vw, 0.88rem);
     width: 100%;
     justify-content: center;
   }
 }
 
 @media (max-width: 600px) {
-  .hero-ref-container {
-    grid-template-columns: 1.25fr 0.25fr 1.25fr;
-    gap: 4px;
+  .hero-right-layout {
+    grid-template-columns: 0.35fr 1.65fr;
+    gap: 6px;
     padding-top: 10px;
   }
-  .hero-ref-left,
-  .hero-ref-right {
+  .hero-ref-right-content {
     align-items: flex-start;
     text-align: left;
   }
   .hero-ref-title {
-    font-size: clamp(1.65rem, 7.8vw, 3.4rem);
-    letter-spacing: 1.5px;
+    font-size: clamp(2.1rem, 9.2vw, 3.8rem);
+    letter-spacing: 2px;
     text-align: left !important;
   }
   .hero-ref-badge {
-    padding: 3px 8px;
-    font-size: 0.6rem;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .hero-ref-badge-spacer {
-    height: 20px;
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
     margin-bottom: 6px;
   }
   .hero-ref-pill {
-    padding: 5px 8px;
-    font-size: clamp(0.5rem, 1.6vw, 0.65rem);
+    padding: 6px 10px;
+    font-size: clamp(0.55rem, 2.2vw, 0.72rem);
     letter-spacing: 0.5px;
+    margin-bottom: 14px;
   }
   .hero-ref-actions {
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
+    max-width: 260px;
   }
   .hero-ref-actions .btn {
-    padding: 7px 8px;
-    font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+    padding: 9px 12px;
+    font-size: clamp(0.7rem, 2.2vw, 0.82rem);
   }
 }
 
