@@ -1528,7 +1528,18 @@ html {
   gap: 24px;
   margin-bottom: 60px;
   width: 100%;
-  max-width: 700px;
+  max-width: 1000px;
+}
+
+.yt-icon {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.35) !important;
+}
+
+.yt-card:hover {
+  border-color: rgba(239, 68, 68, 0.6) !important;
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.35), 0 0 20px rgba(239, 68, 68, 0.2) !important;
 }
 
 .contact-card {
