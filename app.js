@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollThumb.style.top = `${thumbTop}px`;
 
       // Check if user has reached the very bottom of the website
-      const isAtBottom = Math.ceil(currentScrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 10);
+      const isAtBottom = Math.ceil(currentScrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 25);
 
       if (isAtBottom) {
         scrollThumb.classList.add('at-bottom');
