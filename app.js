@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const FRAME_COUNT = 240;
+  const FRAME_COUNT = 143;
+  const SCROLLBAR_FRAME_COUNT = 240;
   const frames = [];
+  const scrollbarFrames = [];
   let loadedCount = 0;
 
   // DOM Elements
@@ -17,14 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
   let targetFrame = 0;
   let currentFrame = 0;
 
-  // Format frame path: frames/frame_000000.png
+  // Format hero frame path: frames/frame_00001.png
   function getFramePath(index) {
-    const paddedIndex = String(index).padStart(6, '0');
+    const paddedIndex = String(index + 1).padStart(5, '0');
     return `frames/frame_${paddedIndex}.png`;
   }
 
-  // Preload all 240 frames
+  // Format scrollbar frame path: scrollbar_frames/frame_000000.png
+  function getScrollbarFramePath(index) {
+    const paddedIndex = String(index).padStart(6, '0');
+    return `scrollbar_frames/frame_${paddedIndex}.png`;
+  }
+
+  // Preload scrollbar frames asynchronously
+  function preloadScrollbarFrames() {
+    for (let i = 0; i < SCROLLBAR_FRAME_COUNT; i++) {
+      const img = new Image();
+      img.src = getScrollbarFramePath(i);
+      scrollbarFrames.push(img);
+    }
+  }
+
+  // Preload all hero canvas frames
   function preloadFrames() {
+    preloadScrollbarFrames();
+
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
       img.src = getFramePath(i);
@@ -355,6 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Floating Custom Character Rope Climbing Scrollbar Controller
   const scrollTrack = document.getElementById('custom-scroll-track');
   const scrollThumb = document.getElementById('custom-scroll-thumb');
+  const thumbClimbingImg = document.getElementById('thumb-climbing-img');
 
   if (scrollTrack && scrollThumb) {
     let isDragging = false;
@@ -369,10 +389,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (docHeight <= 0) return;
 
       const trackHeight = scrollTrack.clientHeight - scrollThumb.clientHeight;
-      const scrollFraction = currentScrollY / docHeight;
+      const scrollFraction = Math.max(0, Math.min(1, currentScrollY / docHeight));
       const thumbTop = Math.max(0, Math.min(trackHeight, scrollFraction * trackHeight));
 
       scrollThumb.style.top = `${thumbTop}px`;
+
+      // Dynamically update scrollbar character animation frame matching scroll fraction
+      if (thumbClimbingImg && scrollbarFrames.length > 0) {
+        const frameIndex = Math.min(SCROLLBAR_FRAME_COUNT - 1, Math.floor(scrollFraction * SCROLLBAR_FRAME_COUNT));
+        if (scrollbarFrames[frameIndex] && scrollbarFrames[frameIndex].complete) {
+          thumbClimbingImg.src = scrollbarFrames[frameIndex].src;
+        }
+      }
 
       // Check if user has reached the very bottom of the website
       const isAtBottom = Math.ceil(currentScrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 25);
