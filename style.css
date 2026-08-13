@@ -72,26 +72,25 @@ body.loaded .custom-scroll-widget {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 6px;
+  width: 3px;
   height: 100vh;
   height: 100dvh;
   background: repeating-linear-gradient(
     45deg,
     #e2b17a 0px,
-    #e2b17a 4px,
+    #e2b17a 2px,
+    #c48f56 2px,
     #c48f56 4px,
-    #c48f56 8px,
-    #966635 8px,
-    #966635 12px,
-    #6e4620 12px,
-    #6e4620 16px
+    #966635 4px,
+    #966635 6px,
+    #6e4620 6px,
+    #6e4620 8px
   );
   box-shadow: 
-    inset -1px 0 3px rgba(0, 0, 0, 0.75),
-    inset 1px 0 2px rgba(255, 255, 255, 0.45),
-    0 0 10px rgba(0, 0, 0, 0.85),
-    0 0 16px rgba(192, 132, 252, 0.35);
-  border-radius: 4px;
+    inset -0.5px 0 1.5px rgba(0, 0, 0, 0.8),
+    0 0 6px rgba(0, 0, 0, 0.7),
+    0 0 10px rgba(192, 132, 252, 0.3);
+  border-radius: 2px;
 }
 
 .custom-scroll-track {
@@ -1880,6 +1879,10 @@ body.loaded .custom-scroll-widget {
     right: 6px;
     width: 48px;
     z-index: 900;
+  }
+
+  .custom-scroll-rope {
+    width: 2.5px;
   }
 
   .custom-scroll-track {
