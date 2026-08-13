@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
   gmailComposeLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      window.open('https://mail.google.com/mail/?view=cm&fs=1&to=niladribusiness08@gmail.com', '_blank');
+      window.open('https://gmail.google.com/mail/?view=cm&fs=1&to=niladribusiness08@gmail.com', '_blank');
     });
   });
 
