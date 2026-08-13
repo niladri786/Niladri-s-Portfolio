@@ -1857,9 +1857,19 @@ body.loaded .custom-scroll-widget {
 }
 
 @media (max-width: 768px) {
-  /* Hide custom floating scrollbar widget on mobile phones to prevent margin overflow */
+  /* Mobile & Tablet Character Rope Climbing Scrollbar Optimization */
   .custom-scroll-widget {
-    display: none !important;
+    right: 4px;
+    width: 48px;
+    z-index: 900;
+  }
+
+  .custom-scroll-thumb {
+    width: 44px;
+  }
+
+  .custom-scroll-thumb.at-bottom #thumb-standing-img {
+    transform: scale(1.05) translateX(-10px);
   }
 
   .portfolio-wrapper {
