@@ -208,6 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Gmail Chat / Mail Redirect Handler
+  const gmailChatLinks = document.querySelectorAll('.gmail-chat-link');
+  gmailChatLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open('https://chat.google.com/dm/niladribusiness08@gmail.com', '_blank');
+    });
+  });
+
   // Event Listeners
   window.addEventListener('scroll', () => {
     updateScrollTarget();
