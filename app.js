@@ -216,6 +216,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Interactive Tools Click to Reveal Handler
+  const toolCards = document.querySelectorAll('.tool-card');
+  const revealAllToolsBtn = document.getElementById('reveal-all-tools-btn');
+
+  toolCards.forEach(card => {
+    card.addEventListener('click', () => {
+      if (card.classList.contains('locked')) {
+        card.classList.remove('locked');
+        card.classList.add('revealed');
+      }
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (card.classList.contains('locked')) {
+          card.classList.remove('locked');
+          card.classList.add('revealed');
+        }
+      }
+    });
+  });
+
+  if (revealAllToolsBtn) {
+    revealAllToolsBtn.addEventListener('click', () => {
+      toolCards.forEach(card => {
+        card.classList.remove('locked');
+        card.classList.add('revealed');
+      });
+      revealAllToolsBtn.style.display = 'none';
+    });
+  }
+
   // Event Listeners
   window.addEventListener('scroll', () => {
     updateScrollTarget();
