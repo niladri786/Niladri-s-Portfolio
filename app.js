@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const FRAME_COUNT = 143;
-  const SCROLLBAR_FRAME_COUNT = 240;
   const frames = [];
-  const scrollbarFrames = [];
   let loadedCount = 0;
 
   // DOM Elements
@@ -25,25 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return `frames/frame_${paddedIndex}.png`;
   }
 
-  // Format scrollbar frame path: scrollbar_frames/frame_000000.png
-  function getScrollbarFramePath(index) {
-    const paddedIndex = String(index).padStart(6, '0');
-    return `scrollbar_frames/frame_${paddedIndex}.png`;
-  }
-
-  // Preload scrollbar frames asynchronously
-  function preloadScrollbarFrames() {
-    for (let i = 0; i < SCROLLBAR_FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = getScrollbarFramePath(i);
-      scrollbarFrames.push(img);
-    }
-  }
-
   // Preload all hero canvas frames
   function preloadFrames() {
-    preloadScrollbarFrames();
-
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
       img.src = getFramePath(i);
@@ -369,132 +350,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mouseup', () => {
       document.body.classList.remove('cursor-active');
     });
-  }
-
-  // Floating Custom Character Rope Climbing Scrollbar Controller
-  const scrollTrack = document.getElementById('custom-scroll-track');
-  const scrollThumb = document.getElementById('custom-scroll-thumb');
-  const thumbClimbingImg = document.getElementById('thumb-climbing-img');
-
-  if (scrollTrack && scrollThumb) {
-    let isDragging = false;
-    let startY = 0;
-    let startScrollTop = 0;
-    let lastScrollY = window.scrollY;
-    let climbTimeout = null;
-
-    function updateCustomScrollbar() {
-      const currentScrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight <= 0) return;
-
-      const trackHeight = scrollTrack.clientHeight - scrollThumb.clientHeight;
-      const scrollFraction = Math.max(0, Math.min(1, currentScrollY / docHeight));
-      const thumbTop = Math.max(0, Math.min(trackHeight, scrollFraction * trackHeight));
-
-      scrollThumb.style.top = `${thumbTop}px`;
-
-      // Dynamically update scrollbar character animation frame matching scroll fraction
-      if (thumbClimbingImg && scrollbarFrames.length > 0) {
-        const frameIndex = Math.min(SCROLLBAR_FRAME_COUNT - 1, Math.floor(scrollFraction * SCROLLBAR_FRAME_COUNT));
-        if (scrollbarFrames[frameIndex] && scrollbarFrames[frameIndex].complete) {
-          thumbClimbingImg.src = scrollbarFrames[frameIndex].src;
-        }
-      }
-
-      // Check if user has reached the very bottom of the website
-      const isAtBottom = Math.ceil(currentScrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 25);
-
-      if (isAtBottom) {
-        scrollThumb.classList.add('at-bottom');
-        scrollThumb.classList.remove('climbing-up', 'climbing-down');
-      } else {
-        scrollThumb.classList.remove('at-bottom');
-
-        // Detect scroll direction (climbing up vs climbing down)
-        if (currentScrollY < lastScrollY - 2) {
-          scrollThumb.classList.add('climbing-up');
-          scrollThumb.classList.remove('climbing-down');
-        } else if (currentScrollY > lastScrollY + 2) {
-          scrollThumb.classList.add('climbing-down');
-          scrollThumb.classList.remove('climbing-up');
-        }
-
-        // Reset climb wiggle state shortly after scrolling stops
-        clearTimeout(climbTimeout);
-        climbTimeout = setTimeout(() => {
-          scrollThumb.classList.remove('climbing-up', 'climbing-down');
-        }, 400);
-      }
-
-      lastScrollY = currentScrollY;
-    }
-
-    window.addEventListener('scroll', updateCustomScrollbar, { passive: true });
-    window.addEventListener('resize', updateCustomScrollbar);
-    updateCustomScrollbar();
-
-    // Click track to jump
-    scrollTrack.addEventListener('click', (e) => {
-      if (e.target === scrollThumb || scrollThumb.contains(e.target)) return;
-      const rect = scrollTrack.getBoundingClientRect();
-      const clickY = e.clientY - rect.top;
-      const trackHeight = scrollTrack.clientHeight;
-      const targetFraction = Math.max(0, Math.min(1, clickY / trackHeight));
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      window.scrollTo({ top: targetFraction * docHeight, behavior: 'smooth' });
-    });
-
-    // Mouse & Touch Dragging
-    function handleDragStart(clientY) {
-      isDragging = true;
-      startY = clientY;
-      startScrollTop = window.scrollY;
-      document.body.classList.add('cursor-active');
-    }
-
-    function handleDragMove(clientY) {
-      if (!isDragging) return;
-      const deltaY = clientY - startY;
-      const trackHeight = scrollTrack.clientHeight - scrollThumb.clientHeight;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-      if (trackHeight > 0 && docHeight > 0) {
-        const scrollDelta = (deltaY / trackHeight) * docHeight;
-        window.scrollTo(0, startScrollTop + scrollDelta);
-      }
-    }
-
-    function handleDragEnd() {
-      if (isDragging) {
-        isDragging = false;
-        document.body.classList.remove('cursor-active');
-      }
-    }
-
-    scrollThumb.addEventListener('mousedown', (e) => {
-      handleDragStart(e.clientY);
-      e.preventDefault();
-    });
-
-    scrollThumb.addEventListener('touchstart', (e) => {
-      if (e.touches && e.touches[0]) {
-        handleDragStart(e.touches[0].clientY);
-      }
-    }, { passive: true });
-
-    window.addEventListener('mousemove', (e) => {
-      handleDragMove(e.clientY);
-    });
-
-    window.addEventListener('touchmove', (e) => {
-      if (isDragging && e.touches && e.touches[0]) {
-        handleDragMove(e.touches[0].clientY);
-      }
-    }, { passive: true });
-
-    window.addEventListener('mouseup', handleDragEnd);
-    window.addEventListener('touchend', handleDragEnd);
   }
 
   // Initial call

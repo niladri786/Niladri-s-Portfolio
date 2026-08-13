@@ -35,150 +35,32 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Hide default native browser scrollbar */
-html {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
+/* Modern Professional Custom Scrollbar */
 ::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
+  width: 8px;
+  height: 8px;
 }
 
-/* Floating Custom Image Scrollbar Widget */
-/* Interactive Character Rope Climbing Scrollbar Widget */
-.custom-scroll-widget {
-  position: fixed;
-  top: 0;
-  right: 12px;
-  height: 100vh;
-  width: 70px;
-  z-index: 900;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+::-webkit-scrollbar-track {
+  background: rgba(6, 6, 8, 0.95);
 }
 
-body.loaded .custom-scroll-widget {
-  opacity: 1;
-  visibility: visible;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9333ea 0%, #c084fc 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  box-shadow: 0 0 8px rgba(147, 51, 234, 0.5);
 }
 
-.custom-scroll-rope {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 100vh;
-  height: 100dvh;
-  background: repeating-linear-gradient(
-    45deg,
-    #e2b17a 0px,
-    #e2b17a 2px,
-    #c48f56 2px,
-    #c48f56 4px,
-    #966635 4px,
-    #966635 6px,
-    #6e4620 6px,
-    #6e4620 8px
-  );
-  box-shadow: 
-    inset -0.5px 0 1.5px rgba(0, 0, 0, 0.8),
-    0 0 6px rgba(0, 0, 0, 0.7),
-    0 0 10px rgba(192, 132, 252, 0.3);
-  border-radius: 2px;
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a855f7 0%, #d8b4fe 100%);
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.8);
 }
 
-.custom-scroll-track {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 60px);
-  height: calc(100dvh - 60px);
-  margin-top: 10px;
-  pointer-events: auto;
-}
-
-.custom-scroll-thumb {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 54px;
-  height: auto;
-  cursor: grab;
-  user-select: none;
-  -webkit-user-select: none;
-  filter: drop-shadow(0 0 14px rgba(192, 132, 252, 0.85)) drop-shadow(0 4px 14px rgba(0, 0, 0, 0.85));
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
-  z-index: 99991;
-}
-
-.custom-scroll-thumb.at-bottom {
-  top: auto !important;
-  bottom: 0px !important;
-}
-
-.thumb-char-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  pointer-events: none;
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Direction Climbing Animations */
-.custom-scroll-thumb.climbing-up #thumb-climbing-img {
-  transform: scaleY(1) translateY(0);
-  animation: ropeClimbUpDown 0.3s ease-in-out infinite alternate;
-}
-
-.custom-scroll-thumb.climbing-down #thumb-climbing-img {
-  transform: scaleY(-1) translateY(0);
-  animation: ropeClimbUpDown 0.3s ease-in-out infinite alternate;
-}
-
-@keyframes ropeClimbUpDown {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-4px) scale(1.05); }
-}
-
-/* Standing at Bottom Jump-Out State */
-.custom-scroll-thumb .standing-hidden {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.6) translateX(-20px);
-}
-
-.custom-scroll-thumb.at-bottom #thumb-climbing-img {
-  opacity: 0;
-  transform: translateY(-20px) scale(0.7);
-}
-
-.custom-scroll-thumb.at-bottom #thumb-standing-img {
-  opacity: 1;
-  transform: scale(1.05) translateX(-8px);
-  animation: heroJumpLand 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-@keyframes heroJumpLand {
-  0% { opacity: 0; transform: translateY(-30px) scale(0.5) translateX(0); }
-  60% { opacity: 1; transform: translateY(5px) scale(1.15) translateX(-10px); }
-  100% { opacity: 1; transform: translateY(0) scale(1.05) translateX(-8px); }
-}
-
-.custom-scroll-thumb:hover {
-  filter: drop-shadow(0 0 22px rgba(192, 132, 252, 1)) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.95));
-}
-
-.custom-scroll-thumb:active {
-  cursor: grabbing;
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9333ea rgba(6, 6, 8, 0.95);
 }
 
 /* Fixed Background Canvas */
@@ -1874,29 +1756,6 @@ body.loaded .custom-scroll-widget {
 }
 
 @media (max-width: 768px) {
-  /* Mobile & Tablet Character Rope Climbing Scrollbar Optimization */
-  .custom-scroll-widget {
-    right: 6px;
-    width: 48px;
-    z-index: 900;
-  }
-
-  .custom-scroll-rope {
-    width: 2.5px;
-  }
-
-  .custom-scroll-track {
-    height: calc(100vh - 60px);
-    margin-top: 10px;
-  }
-
-  .custom-scroll-thumb {
-    width: 42px;
-  }
-
-  .custom-scroll-thumb.at-bottom #thumb-standing-img {
-    transform: scale(1.02) translateX(-4px);
-  }
 
   .portfolio-wrapper {
     padding-left: 12px;
