@@ -605,12 +605,8 @@ html {
 
 /* Hero Section */
 .hero-section {
-  padding: 40px 0 20px 0;
-  min-height: calc(85vh - 100px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 60px;
+  padding: 30px 0 10px 0;
+  margin-bottom: 20px;
 }
 
 /* Reference Mockup Hero Layout */
@@ -622,7 +618,7 @@ html {
   min-height: 380px;
   width: 100%;
   position: relative;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 .hero-left-layout {
@@ -630,10 +626,10 @@ html {
   grid-template-columns: 1.2fr 0.8fr;
   align-items: flex-start;
   gap: 20px;
-  min-height: 520px;
+  min-height: 420px;
   width: 100%;
   position: relative;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 .hero-ref-left-content,
@@ -1034,13 +1030,13 @@ html {
 
 /* Sections General */
 .section-container {
-  padding: 100px 0 90px 0;
-  scroll-margin-top: 110px;
+  padding: 60px 0;
+  scroll-margin-top: 85px;
 }
 
 #about.section-container {
-  padding-top: 100px;
-  scroll-margin-top: 110px;
+  padding-top: 60px;
+  scroll-margin-top: 85px;
 }
 
 .section-header {
