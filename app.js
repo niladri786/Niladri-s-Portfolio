@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Floating Custom Image Scrollbar Widget Controller (Desktop & Mobile)
+  // Floating Custom Character Rope Climbing Scrollbar Controller
   const scrollTrack = document.getElementById('custom-scroll-track');
   const scrollThumb = document.getElementById('custom-scroll-thumb');
 
@@ -359,16 +359,46 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDragging = false;
     let startY = 0;
     let startScrollTop = 0;
+    let lastScrollY = window.scrollY;
+    let climbTimeout = null;
 
     function updateCustomScrollbar() {
+      const currentScrollY = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight <= 0) return;
 
       const trackHeight = scrollTrack.clientHeight - scrollThumb.clientHeight;
-      const scrollFraction = window.scrollY / docHeight;
+      const scrollFraction = currentScrollY / docHeight;
       const thumbTop = Math.max(0, Math.min(trackHeight, scrollFraction * trackHeight));
 
       scrollThumb.style.top = `${thumbTop}px`;
+
+      // Check if user has reached the very bottom of the website
+      const isAtBottom = Math.ceil(currentScrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 10);
+
+      if (isAtBottom) {
+        scrollThumb.classList.add('at-bottom');
+        scrollThumb.classList.remove('climbing-up', 'climbing-down');
+      } else {
+        scrollThumb.classList.remove('at-bottom');
+
+        // Detect scroll direction (climbing up vs climbing down)
+        if (currentScrollY < lastScrollY - 2) {
+          scrollThumb.classList.add('climbing-up');
+          scrollThumb.classList.remove('climbing-down');
+        } else if (currentScrollY > lastScrollY + 2) {
+          scrollThumb.classList.add('climbing-down');
+          scrollThumb.classList.remove('climbing-up');
+        }
+
+        // Reset climb wiggle state shortly after scrolling stops
+        clearTimeout(climbTimeout);
+        climbTimeout = setTimeout(() => {
+          scrollThumb.classList.remove('climbing-up', 'climbing-down');
+        }, 400);
+      }
+
+      lastScrollY = currentScrollY;
     }
 
     window.addEventListener('scroll', updateCustomScrollbar, { passive: true });
