@@ -629,38 +629,23 @@ html {
 
 @media (max-width: 992px) {
   .hero-ref-container {
-    grid-template-columns: 1.2fr 0.6fr 1.2fr;
-    gap: 12px;
+    grid-template-columns: 1.15fr 0.35fr 1.15fr;
+    gap: 10px;
     padding-top: 15px;
   }
   .hero-ref-title {
-    font-size: clamp(2.8rem, 10vw, 5.8rem);
+    font-size: clamp(2.4rem, 8vw, 5.8rem);
   }
   .hero-ref-badge-spacer {
-    height: 28px;
+    height: 26px;
   }
   .hero-ref-badge {
-    padding: 4px 14px;
-    font-size: 0.75rem;
+    padding: 4px 12px;
+    font-size: clamp(0.6rem, 1.8vw, 0.75rem);
   }
   .hero-ref-pill {
-    padding: 8px 14px;
-    font-size: 0.75rem;
-  }
-  .hero-ref-actions .btn {
-    padding: 10px 16px;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-ref-container {
-    grid-template-columns: 1.3fr 0.3fr 1.3fr;
-    gap: 6px;
-  }
-  .hero-ref-title {
-    font-size: clamp(2rem, 9.2vw, 3.6rem);
-    letter-spacing: 2px;
+    padding: 6px 12px;
+    font-size: clamp(0.55rem, 1.7vw, 0.75rem);
   }
   .hero-ref-actions {
     flex-direction: column;
@@ -668,8 +653,46 @@ html {
     width: 100%;
   }
   .hero-ref-actions .btn {
+    padding: 8px 12px;
+    font-size: clamp(0.65rem, 2vw, 0.82rem);
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-ref-container {
+    grid-template-columns: 1.25fr 0.25fr 1.25fr;
+    gap: 4px;
+    padding-top: 10px;
+  }
+  .hero-ref-title {
+    font-size: clamp(1.65rem, 7.8vw, 3.4rem);
+    letter-spacing: 1.5px;
+  }
+  .hero-ref-badge {
+    padding: 3px 8px;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .hero-ref-badge-spacer {
+    height: 20px;
+    margin-bottom: 6px;
+  }
+  .hero-ref-pill {
+    padding: 5px 8px;
+    font-size: clamp(0.5rem, 1.6vw, 0.65rem);
+    letter-spacing: 0.5px;
+  }
+  .hero-ref-actions {
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+  .hero-ref-actions .btn {
+    padding: 7px 8px;
+    font-size: clamp(0.6rem, 1.8vw, 0.75rem);
   }
 }
 
@@ -1412,46 +1435,9 @@ html {
   }
 
   .portfolio-wrapper {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 85px;
-  }
-
-  .hero-ref-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    min-height: auto;
-    padding-top: 10px;
-  }
-
-  .hero-ref-left,
-  .hero-ref-right {
-    align-items: center;
-    width: 100%;
-  }
-
-  .hero-ref-badge-spacer {
-    display: none;
-  }
-
-  .hero-ref-title {
-    font-size: clamp(3.6rem, 15.5vw, 6rem);
-    text-align: center;
-    line-height: 0.9;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-  }
-
-  .hero-ref-pill {
-    margin-top: 4px;
-    padding: 8px 16px;
-    font-size: 0.78rem;
-    letter-spacing: 1px;
-    justify-content: center;
-    width: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 80px;
   }
 
   .hero-ref-actions {
@@ -1544,7 +1530,8 @@ html {
   }
 
   .hero-ref-title {
-    font-size: clamp(3rem, 14vw, 4.4rem);
+    font-size: clamp(1.4rem, 7.2vw, 2.5rem);
+    letter-spacing: 1px;
   }
 
   .section-title {
