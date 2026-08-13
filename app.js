@@ -208,9 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact Mail Redirect Handler
-  const contactMailLinks = document.querySelectorAll('.contact-mail-link');
-  contactMailLinks.forEach(link => {
+  // Footer Mail Redirect Handler
+  const footerMailCards = document.querySelectorAll('.footer-mail-card');
+  footerMailCards.forEach(link => {
     link.addEventListener('click', (e) => {
       window.location.href = 'mailto:niladribusiness08@gmail.com';
     });
