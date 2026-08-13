@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niladri Sukul | Graphic & Thumbnail Designer Portfolio</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Portfolio of Niladri Sukul - High CTR Youtube Thumbnails, Social Media Designs, Reel Covers & Promotional Posters.">
+  <meta name="author" content="Niladri Sukul">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Custom Animated Cursor -->
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+  <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+  <!-- Preloader Screen -->
+  <div id="loader" class="loader-container">
+    <div class="loader-content">
+      <div class="loader-logo">NILADRI SUKUL</div>
+      <div class="loader-spinner-wrapper">
+        <div class="loader-ring"></div>
+        <div id="loader-percentage" class="loader-percentage">0%</div>
+      </div>
+      <div class="loader-bar-bg">
+        <div id="loader-bar" class="loader-bar"></div>
+      </div>
+      <p class="loader-status" id="loader-status">Loading Portfolio Experience...</p>
+    </div>
+  </div>
+
+  <!-- Background Fixed Video Frame Canvas -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <span class="brand-sparkle"><i class="fa-solid fa-layer-group"></i></span>
+        NILADRI<span class="gradient-brand">.DESIGNS</span>
+      </a>
+      <div class="nav-links">
+        <a href="#home" class="nav-link"><span>Home</span></a>
+        <a href="#about" class="nav-link"><span>About</span></a>
+        <a href="#process" class="nav-link"><span>Process</span></a>
+        <a href="#tools" class="nav-link"><span>Tools</span></a>
+        <a href="#works" class="nav-link"><span>My Works</span></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=niladribusiness08@gmail.com" target="_blank" rel="noopener" class="nav-cta">
+          <span>Hire Me</span>
+          <i class="fa-solid fa-arrow-right-long nav-cta-icon"></i>
+        </a>
+      </div>
+    </div>
+    <div class="nav-bottom-line"></div>
+  </nav>
+
+  <!-- Content Overlay Wrapper -->
+  <div class="portfolio-wrapper">
+
+    <!-- Home / Hero Section (Matching Reference Mockup) -->
+    <section class="hero-section" id="home">
+      <div class="hero-ref-container">
+
+        <!-- Left Column: HI, I'M Badge + NILADRI + GRAPHIC & THUMBNAIL DESIGNER Pill -->
+        <div class="hero-ref-left">
+          <div class="hero-ref-badge">HI, I'M</div>
+          <h1 class="hero-ref-title hero-title-pro">NILADRI</h1>
+          <div class="hero-ref-pill">
+            <span class="pulse-dot"></span> GRAPHIC & THUMBNAIL DESIGNER
+          </div>
+        </div>
+
+        <!-- Middle Column: Empty space showing video canvas character -->
+        <div class="hero-ref-center"></div>
+
+        <!-- Right Column: SUKUL + Horizontal Action Buttons -->
+        <div class="hero-ref-right">
+          <div class="hero-ref-badge-spacer"></div>
+          <h1 class="hero-ref-title hero-title-pro">SUKUL</h1>
+          <div class="hero-ref-actions">
+            <a href="#works" class="btn btn-primary"><i class="fa-solid fa-fire"></i> View Projects</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=niladribusiness08@gmail.com" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fa-regular fa-paper-plane"></i> Contact Me</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Dedicated About Section -->
+    <section class="section-container" id="about">
+      <div class="section-header">
+        <h2 class="section-title">ABOUT <span class="gradient-text">NILADRI</span></h2>
+        <p class="section-subtitle">Visual Storyteller, High-CTR Thumbnail Specialist & Graphic Designer</p>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Story & Mission Card -->
+        <div class="about-story-card">
+          <div class="about-badge"><i class="fa-solid fa-user-ninja"></i> MY STORY & MISSION</div>
+          <h3 class="about-heading">Crafting Visual Hooks That Turn Scrollers Into Viewers</h3>
+          <p class="about-paragraph highlight-bio">
+            Specialized in High-CTR YouTube thumbnails, visual storytelling, and scroll-stopping social media creatives that drive engagement and convert viewers.
+          </p>
+          <p class="about-paragraph">
+            Hi! I'm <strong>Niladri Sukul</strong>, a dedicated graphic designer with 4+ years of experience. In today's fast-moving digital landscape, a viewer decides whether to click your content in <strong>under 0.3 seconds</strong>. My mission is to engineer visuals that stop the scroll, evoke emotion, and boost your channel's CTR (Click-Through Rate).
+          </p>
+
+          <div class="about-quote-box">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>"A great thumbnail isn't just art—it's strategic visual psychology that commands attention."</p>
+          </div>
+        </div>
+
+        <!-- Impact & Performance Stats Card -->
+        <div class="hero-stats-card about-stats-card">
+          <h3 class="stats-card-title"><i class="fa-solid fa-chart-line"></i> IMPACT & PERFORMANCE</h3>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="stat-number gradient-text">100+</span>
+              <span class="stat-label">Thumbnails Designed</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number gradient-text">15%+</span>
+              <span class="stat-label">Avg. CTR Increase</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number gradient-text"><span class="infinity-symbol">∞</span> Revisions</span>
+              <span class="stat-label">Customer Satisfaction Guaranteed</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number gradient-text">4+ Yrs</span>
+              <span class="stat-label">Design Experience</span>
+            </div>
+          </div>
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-bolt gradient-text"></i>
+              <span>High-CTR Visual Storytelling & Expression Retouching</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-pen-ruler gradient-text"></i>
+              <span>High-Contrast Typography & Custom Lighting Depth</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-clock gradient-text"></i>
+              <span>Fast 24-48 Hour Turnaround for Active Creators</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills & Core Competencies Sub-Card -->
+      <div class="about-skills-wrapper">
+        <div class="about-skills-card">
+          <h3 class="about-heading"><i class="fa-solid fa-sliders"></i> CORE COMPETENCIES</h3>
+          <div class="skills-grid-inner">
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">YouTube Thumbnail Optimization & CTR Strategy</span>
+                <span class="skill-percent">98%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 98%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">Visual Storytelling & Hook Composition</span>
+                <span class="skill-percent">95%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">Photo Manipulation & Custom Lighting</span>
+                <span class="skill-percent">92%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">Social Media Creatives & Ad Posters</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-features-mini">
+            <div class="mini-feature">
+              <i class="fa-solid fa-circle-check gradient-text"></i>
+              <span>High Contrast & Mobile Optimization</span>
+            </div>
+            <div class="mini-feature">
+              <i class="fa-solid fa-circle-check gradient-text"></i>
+              <span>Expression Retouching & Color Grading</span>
+            </div>
+            <div class="mini-feature">
+              <i class="fa-solid fa-circle-check gradient-text"></i>
+              <span>24/7 Creator Support & Unlimited Revisions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Do Section -->
+    <section class="section-container" id="services">
+      <div class="section-header">
+        <h2 class="section-title">WHAT I <span class="gradient-text">DO</span></h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="card-icon"><i class="fa-brands fa-youtube"></i></div>
+          <h3 class="service-title">THUMBNAIL DESIGN</h3>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> HIGH CTR THUMBNAILS</li>
+            <li><i class="fa-solid fa-check"></i> CLICKBAIT-STYLE BUT CLEAN VISUALS</li>
+            <li><i class="fa-solid fa-check"></i> FACIAL EXPRESSION ENHANCEMENT & RETOUCHING</li>
+            <li><i class="fa-solid fa-check"></i> BOLD TYPOGRAPHY & CONTRAST OPTIMIZATION</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3 class="service-title">SOCIAL MEDIA DESIGN</h3>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> INSTAGRAM POSTS & CAROUSELS</li>
+            <li><i class="fa-solid fa-check"></i> AD CREATIVES</li>
+            <li><i class="fa-solid fa-check"></i> PROMOTIONAL POSTERS</li>
+            <li><i class="fa-solid fa-check"></i> BRANDING & REEL COVERS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Design Process Section -->
+    <section class="section-container" id="process">
+      <div class="section-header">
+        <h2 class="section-title">MY DESIGN <span class="gradient-text">PROCESS</span></h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>UNDERSTANDING THE CONTENT</h4>
+            <p>What is the video about? What emotion should it trigger?</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>FINDING THE HOOK</h4>
+            <p>What will make someone stop scrolling immediately?</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>CONCEPT BUILDING</h4>
+            <p>Sketching layout mentally (face expression, text hierarchy, background placement)</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>EXECUTION</h4>
+            <p>Clean composition, lighting depth, high contrast, and impactful typography</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>OPTIMIZATION</h4>
+            <p>Making sure visuals & text are instantly readable even on mobile devices</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h4>FINAL POLISH</h4>
+            <p>Micro-details like realistic shadows, ambient glows, color grading & sharpness</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools I Use Section -->
+    <section class="section-container" id="tools">
+      <div class="section-header">
+        <h2 class="section-title">TOOLS <span class="gradient-text">I USE</span></h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-badge ps-badge">Ps</div>
+          <h3>PHOTOSHOP</h3>
+        </div>
+        <div class="tool-card">
+          <div class="tool-badge canva-badge">Canva</div>
+          <h3>CANVA</h3>
+        </div>
+        <div class="tool-card">
+          <div class="tool-badge ai-badge">Ai</div>
+          <h3>ILLUSTRATOR</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Works Gallery Section -->
+    <section class="section-container" id="works">
+      <div class="section-header">
+        <h2 class="section-title">MY <span class="gradient-text">WORKS</span></h2>
+        <p class="section-subtitle">Browse recent designs across YouTube Thumbnails, Reel Covers, Posters & Flyers.</p>
+        <div class="section-title-line"></div>
+      </div>
+
+      <!-- Works Navigation Tabs -->
+      <div class="works-categories">
+
+        <!-- TECH THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-mobile-screen"></i> TECH THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/tech_1.jpg', 'Tech Thumbnail 1')">
+              <img src="assets/tech_1.jpg" alt="Tech Thumbnail 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/tech_2.jpg', 'Tech Thumbnail 2')">
+              <img src="assets/tech_2.jpg" alt="Tech Thumbnail 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- YOUTUBE TIPS THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-brands fa-youtube"></i> YOUTUBE TIPS THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/yt_tips_1.jpg', 'YouTube Tips 1')">
+              <img src="assets/yt_tips_1.jpg" alt="YouTube Tips 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/yt_tips_2.jpg', 'YouTube Tips 2')">
+              <img src="assets/yt_tips_2.jpg" alt="YouTube Tips 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CREATIVE THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-palette"></i> CREATIVE THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/creative_1.jpg', 'Creative Thumbnail 1')">
+              <img src="assets/creative_1.jpg" alt="Creative Thumbnail 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/creative_2.jpg', 'Creative Thumbnail 2')">
+              <img src="assets/creative_2.jpg" alt="Creative Thumbnail 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOCUMENTARY THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-film"></i> DOCUMENTARY THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/doc_1.jpg', 'Documentary 1')">
+              <img src="assets/doc_1.jpg" alt="Documentary Thumbnail 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/doc_2.jpg', 'Documentary 2')">
+              <img src="assets/doc_2.jpg" alt="Documentary Thumbnail 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/doc_3.jpg', 'Documentary 3')">
+              <img src="assets/doc_3.jpg" alt="Documentary Thumbnail 3" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/doc_4.jpg', 'Documentary 4')">
+              <img src="assets/doc_4.jpg" alt="Documentary Thumbnail 4" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/doc_5.jpg', 'Documentary 5')">
+              <img src="assets/doc_5.jpg" alt="Documentary Thumbnail 5" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/doc_6.jpg', 'Documentary 6')">
+              <img src="assets/doc_6.jpg" alt="Documentary Thumbnail 6" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PODCAST THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-microphone"></i> PODCAST THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/podcast_1.jpg', 'Podcast Thumbnail 1')">
+              <img src="assets/podcast_1.jpg" alt="Podcast Thumbnail 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/podcast_2.jpg', 'Podcast Thumbnail 2')">
+              <img src="assets/podcast_2.jpg" alt="Podcast Thumbnail 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAR THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-car"></i> CAR THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/car_1.jpg', 'Car Thumbnail 1')">
+              <img src="assets/car_1.jpg" alt="Car Thumbnail 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/car_2.jpg', 'Car Thumbnail 2')">
+              <img src="assets/car_2.jpg" alt="Car Thumbnail 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/car_3.jpg', 'Car Thumbnail 3')">
+              <img src="assets/car_3.jpg" alt="Car Thumbnail 3" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/car_4.jpg', 'Car Thumbnail 4')">
+              <img src="assets/car_4.jpg" alt="Car Thumbnail 4" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/car_5.jpg', 'Car Thumbnail 5')">
+              <img src="assets/car_5.jpg" alt="Car Thumbnail 5" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/car_6.jpg', 'Car Thumbnail 6')">
+              <img src="assets/car_6.jpg" alt="Car Thumbnail 6" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAKEUP TUTORIAL THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-icons"></i> MAKEUP TUTORIAL THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/makeup_1.jpg', 'Makeup Tutorial 1')">
+              <img src="assets/makeup_1.jpg" alt="Makeup Tutorial 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/makeup_2.jpg', 'Makeup Tutorial 2')">
+              <img src="assets/makeup_2.jpg" alt="Makeup Tutorial 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAMING THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-gamepad"></i> GAMING THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/gaming_1.jpg', 'Gaming Thumbnail 1')">
+              <img src="assets/gaming_1.jpg" alt="Gaming Thumbnail 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/gaming_2.jpg', 'Gaming Thumbnail 2')">
+              <img src="assets/gaming_2.jpg" alt="Gaming Thumbnail 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VLOG THUMBNAIL -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-video"></i> VLOG THUMBNAIL</h3>
+          <div class="gallery-grid landscape-grid">
+            <div class="work-item" onclick="openLightbox('assets/vlog_1.jpg', 'Vlog Thumbnail 1')">
+              <img src="assets/vlog_1.jpg" alt="Vlog Thumbnail 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+            <div class="work-item" onclick="openLightbox('assets/vlog_2.jpg', 'Vlog Thumbnail 2')">
+              <img src="assets/vlog_2.jpg" alt="Vlog Thumbnail 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INSTAGRAM REEL COVER -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-brands fa-instagram"></i> INSTAGRAM REEL COVER</h3>
+          <div class="gallery-grid reel-grid">
+            <div class="work-item reel-item" onclick="openLightbox('assets/reel_1.jpg', 'Reel Cover 1')">
+              <img src="assets/reel_1.jpg" alt="Reel Cover 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item reel-item" onclick="openLightbox('assets/reel_2.jpg', 'Reel Cover 2')">
+              <img src="assets/reel_2.jpg" alt="Reel Cover 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item reel-item" onclick="openLightbox('assets/reel_3.jpg', 'Reel Cover 3')">
+              <img src="assets/reel_3.jpg" alt="Reel Cover 3" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item reel-item" onclick="openLightbox('assets/reel_4.jpg', 'Reel Cover 4')">
+              <img src="assets/reel_4.jpg" alt="Reel Cover 4" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOCIAL MEDIA POSTER -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-photo-film"></i> SOCIAL MEDIA POSTER</h3>
+          <div class="gallery-grid poster-grid">
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_1.jpg', 'Social Poster 1')">
+              <img src="assets/poster_1.jpg" alt="Poster 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_2.jpg', 'Social Poster 2')">
+              <img src="assets/poster_2.jpg" alt="Poster 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_3.jpg', 'Social Poster 3')">
+              <img src="assets/poster_3.jpg" alt="Poster 3" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_4.jpg', 'Social Poster 4')">
+              <img src="assets/poster_4.jpg" alt="Poster 4" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_5.jpg', 'Social Poster 5')">
+              <img src="assets/poster_5.jpg" alt="Poster 5" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_6.jpg', 'Social Poster 6')">
+              <img src="assets/poster_6.jpg" alt="Poster 6" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_7.jpg', 'Social Poster 7')">
+              <img src="assets/poster_7.jpg" alt="Poster 7" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item poster-item" onclick="openLightbox('assets/poster_8.jpg', 'Social Poster 8')">
+              <img src="assets/poster_8.jpg" alt="Poster 8" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FLYER DESIGN -->
+        <div class="category-block">
+          <h3 class="category-title"><i class="fa-solid fa-layer-group"></i> FLYER DESIGN</h3>
+          <div class="gallery-grid flyer-grid">
+            <div class="work-item flyer-item" onclick="openLightbox('assets/flyer_1.jpg', 'Flyer 1')">
+              <img src="assets/flyer_1.jpg" alt="Flyer 1" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item flyer-item" onclick="openLightbox('assets/flyer_2.jpg', 'Flyer 2')">
+              <img src="assets/flyer_2.jpg" alt="Flyer 2" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item flyer-item" onclick="openLightbox('assets/flyer_3.jpg', 'Flyer 3')">
+              <img src="assets/flyer_3.jpg" alt="Flyer 3" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+            <div class="work-item flyer-item" onclick="openLightbox('assets/flyer_4.jpg', 'Flyer 4')">
+              <img src="assets/flyer_4.jpg" alt="Flyer 4" loading="lazy">
+              <div class="work-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> View</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer class="footer-section" id="contact">
+      <div class="footer-container">
+        <h2 class="thanks-title">THANKS FOR <span class="gradient-text">WATCHING</span></h2>
+        <p class="thanks-subtitle">Have a project in mind or need high-converting design assets?</p>
+
+        <div class="contact-cards">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=niladribusiness08@gmail.com" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="contact-details">
+              <span class="contact-label">EMAIL ME</span>
+              <span class="contact-value">niladribusiness08@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/niladri.designs" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="contact-details">
+              <span class="contact-label">INSTAGRAM</span>
+              <span class="contact-value">niladri.designs</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Niladri Sukul. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Work Detail">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <!-- Floating Custom Image Scrollbar Widget -->
+  <div class="custom-scroll-widget" id="custom-scroll-widget">
+    <div class="custom-scroll-track" id="custom-scroll-track">
+      <div class="custom-scroll-thumb" id="custom-scroll-thumb">
+        <img src="assets/scrollbar_thumb.png" alt="Scrollbar Thumb" draggable="false">
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

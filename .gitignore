@@ -1,0 +1,7 @@
+# Ignore large zip archive (exceeds GitHub 100MB file limit)
+frames_24fps_png.zip
+
+# OS / IDE generated files
+.DS_Store
+Thumbs.db
+*.tmp
