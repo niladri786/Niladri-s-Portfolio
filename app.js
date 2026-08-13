@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const FRAME_COUNT = 143;
+  const FRAME_COUNT = 240;
   const frames = [];
   let loadedCount = 0;
 
@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let targetFrame = 0;
   let currentFrame = 0;
 
-  // Format frame path: frames/frame_00001.png
+  // Format frame path: frames/frame_000000.png
   function getFramePath(index) {
-    const paddedIndex = String(index + 1).padStart(5, '0');
+    const paddedIndex = String(index).padStart(6, '0');
     return `frames/frame_${paddedIndex}.png`;
   }
 
