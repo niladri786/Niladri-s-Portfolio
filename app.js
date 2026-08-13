@@ -169,6 +169,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Mobile Navigation Drawer Toggle Handler
+  const navToggleBtn = document.getElementById('nav-toggle');
+  const navLinksContainer = document.getElementById('nav-links');
+
+  if (navToggleBtn && navLinksContainer) {
+    navToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navToggleBtn.classList.toggle('active');
+      navLinksContainer.classList.toggle('active');
+    });
+
+    // Close mobile drawer when clicking any navigation link
+    const allNavLinks = navLinksContainer.querySelectorAll('a');
+    allNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggleBtn.classList.remove('active');
+        navLinksContainer.classList.remove('active');
+      });
+    });
+
+    // Close drawer when tapping outside nav
+    document.addEventListener('click', (e) => {
+      if (navbarEl && !navbarEl.contains(e.target) && navLinksContainer.classList.contains('active')) {
+        navToggleBtn.classList.remove('active');
+        navLinksContainer.classList.remove('active');
+      }
+    });
+  }
+
   // Event Listeners
   window.addEventListener('scroll', () => {
     updateScrollTarget();
