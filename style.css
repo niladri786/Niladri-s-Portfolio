@@ -631,12 +631,14 @@ html {
   padding-top: 20px;
 }
 
-.hero-ref-left-content {
+.hero-ref-left-content,
+.hero-ref-right-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   z-index: 2;
+  gap: 12px;
 }
 
 .hero-ref-left {
@@ -672,7 +674,7 @@ html {
   font-weight: 700;
   letter-spacing: 2.5px;
   color: var(--purple-accent);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .hero-ref-badge-spacer {
@@ -688,18 +690,39 @@ html {
   line-height: 0.85;
   letter-spacing: 4px;
   color: #ffffff;
-  margin: 0 0 8px 0;
+  margin: 0 0 4px 0;
   text-transform: uppercase;
   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
   text-align: left !important;
 }
 
 .hero-title-sukul {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
+.hero-ref-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(18, 18, 26, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(147, 51, 234, 0.2);
+  margin-top: 6px;
+  margin-bottom: 20px !important;
+}
+
+.hero-ref-left-content .hero-ref-pill,
 .hero-ref-right-content .hero-ref-pill {
-  margin-bottom: 24px;
+  margin-bottom: 20px !important;
 }
 
 /* Professional High-End Headline Animation */
@@ -798,12 +821,14 @@ html {
   .hero-ref-pill {
     padding: 8px 14px;
     font-size: clamp(0.6rem, 1.8vw, 0.78rem);
+    margin-bottom: 18px !important;
   }
   .hero-ref-actions {
     flex-direction: column;
     gap: 8px;
     width: 100%;
     max-width: 300px;
+    margin-top: 4px;
   }
   .hero-ref-actions .btn {
     padding: 10px 16px;
@@ -838,13 +863,14 @@ html {
     padding: 6px 10px;
     font-size: clamp(0.55rem, 2.2vw, 0.72rem);
     letter-spacing: 0.5px;
-    margin-bottom: 14px;
+    margin-bottom: 16px !important;
   }
   .hero-ref-actions {
     flex-direction: column;
     gap: 8px;
     width: 100%;
     max-width: 260px;
+    margin-top: 4px;
   }
   .hero-ref-actions .btn {
     padding: 9px 12px;
