@@ -605,7 +605,12 @@ html {
 
 /* Hero Section */
 .hero-section {
-  padding: 40px 0 10px 0;
+  padding: 40px 0 20px 0;
+  min-height: calc(85vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 60px;
 }
 
 /* Reference Mockup Hero Layout */
@@ -625,7 +630,7 @@ html {
   grid-template-columns: 1.2fr 0.8fr;
   align-items: flex-start;
   gap: 20px;
-  min-height: 420px;
+  min-height: 520px;
   width: 100%;
   position: relative;
   padding-top: 20px;
@@ -1029,11 +1034,13 @@ html {
 
 /* Sections General */
 .section-container {
-  padding: 90px 0;
+  padding: 100px 0 90px 0;
+  scroll-margin-top: 110px;
 }
 
 #about.section-container {
-  padding-top: 20px;
+  padding-top: 100px;
+  scroll-margin-top: 110px;
 }
 
 .section-header {
