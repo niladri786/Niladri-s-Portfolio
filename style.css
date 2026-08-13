@@ -1542,6 +1542,17 @@ html {
   box-shadow: 0 12px 30px rgba(239, 68, 68, 0.35), 0 0 20px rgba(239, 68, 68, 0.2) !important;
 }
 
+.x-icon {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.x-card:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25), 0 0 20px rgba(255, 255, 255, 0.15) !important;
+}
+
 .contact-card {
   flex: 1;
   min-width: 310px;
