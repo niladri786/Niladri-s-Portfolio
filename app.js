@@ -352,9 +352,189 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initial call
-  preloadFrames();
-});
+    // Interactive Featured Testimonials Slider Controller
+    const featuredDisplay = document.getElementById('featured-testimonial-card');
+    const dotsContainer = document.getElementById('testimonial-dots');
+    const prevBtn = document.getElementById('testimonial-prev-btn');
+    const nextBtn = document.getElementById('testimonial-next-btn');
+
+    if (featuredDisplay && dotsContainer && prevBtn && nextBtn) {
+      const featuredTestimonials = [
+        {
+          name: "Alex Rivera",
+          channel: "TechVision • 850K Subs",
+          avatarClass: "avatar-yt",
+          initials: "AR",
+          platformIcon: "fa-brands fa-youtube platform-icon yt",
+          rating: 5,
+          quote: "Niladri completely transformed our channel's visual identity. His high-CTR thumbnails boosted our click-through rate from 5.2% to 11.8% in under two weeks! Absolute game changer for tech creators.",
+          metric: "+127% CTR Boost",
+          tag: "Tech Channel"
+        },
+        {
+          name: "Sarah Chen",
+          channel: "Sarah Vlogs • 420K Subs",
+          avatarClass: "avatar-tw",
+          initials: "SC",
+          platformIcon: "fa-brands fa-youtube platform-icon yt",
+          rating: 5,
+          quote: "Working with Niladri is effortless. Turnaround is lightning fast, and every thumbnail has a compelling visual hook. Our video views literally doubled after switching to his designs!",
+          metric: "2.4M+ Views",
+          tag: "Vlog & Lifestyle"
+        },
+        {
+          name: "Marcus Vance",
+          channel: "Vance Gaming • 1.2M Subs",
+          avatarClass: "avatar-ig",
+          initials: "MV",
+          platformIcon: "fa-brands fa-youtube platform-icon yt",
+          rating: 5,
+          quote: "The expression retouching and lighting depth Niladri puts into thumbnail designs are top tier. You can tell he understands YouTube visual psychology inside out.",
+          metric: "Top Tier Hooks",
+          tag: "Gaming Channel"
+        },
+        {
+          name: "Elena Rostova",
+          channel: "Media Lead @ CreatorPulse",
+          avatarClass: "avatar-brand",
+          initials: "ER",
+          platformIcon: "fa-solid fa-building platform-icon brand",
+          rating: 5,
+          quote: "Niladri has been our go-to designer for social media posters & YouTube thumbnails for 2+ years. Revisions are fast and the overall output always exceeds expectations.",
+          metric: "Long-term Partner",
+          tag: "Agency & Brand"
+        }
+      ];
+
+      let currentSlide = 0;
+      let autoSlideInterval = null;
+
+      function renderSlide(index) {
+        const data = featuredTestimonials[index];
+        
+        const starsHtml = Array(data.rating).fill('<i class="fa-solid fa-star"></i>').join('');
+
+        featuredDisplay.innerHTML = `
+          <div class="featured-card-inner">
+            <div class="featured-quote-side">
+              <i class="fa-solid fa-quote-left quote-icon" style="color: var(--purple-accent); font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+              "${data.quote}"
+            </div>
+            <div class="featured-profile-side">
+              <div class="creator-profile">
+                <div class="creator-avatar ${data.avatarClass}">
+                  <span>${data.initials}</span>
+                </div>
+                <div class="creator-info">
+                  <h4 class="creator-name">${data.name} <i class="fa-solid fa-circle-check verified-icon"></i></h4>
+                  <span class="creator-channel"><i class="${data.platformIcon}"></i> ${data.channel}</span>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+                <div class="testimonial-rating">
+                  ${starsHtml}
+                </div>
+                <span class="metric-pill"><i class="fa-solid fa-chart-line"></i> ${data.metric}</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Update active dot
+        const allDots = dotsContainer.querySelectorAll('.slider-dot');
+        allDots.forEach((dot, dIdx) => {
+          if (dIdx === index) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      function createDots() {
+        dotsContainer.innerHTML = '';
+        featuredTestimonials.forEach((_, idx) => {
+          const dot = document.createElement('div');
+          dot.className = `slider-dot ${idx === 0 ? 'active' : ''}`;
+          dot.addEventListener('click', () => {
+            currentSlide = idx;
+            renderSlide(currentSlide);
+            resetAutoSlide();
+          });
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % featuredTestimonials.length;
+        renderSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + featuredTestimonials.length) % featuredTestimonials.length;
+        renderSlide(currentSlide);
+      }
+
+      function startAutoSlide() {
+        if (!autoSlideInterval) {
+          autoSlideInterval = setInterval(nextSlide, 6000);
+        }
+      }
+
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+        startAutoSlide();
+      }
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+      });
+
+      const sliderContainer = document.querySelector('.testimonial-slider-container');
+      if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        sliderContainer.addEventListener('mouseleave', () => startAutoSlide());
+      }
+
+      createDots();
+      renderSlide(0);
+      startAutoSlide();
+    }
+
+    // FAQ Interactive Accordion Controller
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question-btn');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close other FAQ items
+          faqItems.forEach(other => {
+            other.classList.remove('active');
+            const otherBtn = other.querySelector('.faq-question-btn');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle clicked item
+          if (!isActive) {
+            item.classList.add('active');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      }
+    });
+
+    // Initial call
+    preloadFrames();
+  });
 
 // Lightbox Modal Controller Functions
 function openLightbox(src, title) {
